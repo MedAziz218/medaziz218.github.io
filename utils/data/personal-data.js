@@ -3,19 +3,22 @@ export const personalData = {
   logotext: "MED AZIZ",
   name: "Med Aziz Lahdheri",
   profile: '/profile.png',
-  designation: "Software Developer",
-  description: "My name is Aziz. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.",
+  designation: "Software Engineer",
+  description: "My name is Med Aziz, and I am a problem solver who pays great attention to detail.\
+   I am deeply enthusiastic about exploring new technologies and have a profound interest in computer science.\
+   My fascination spans across various domains within the field, with a particular focus on the Internet of Things (IoT) and embedded systems.\
+   I strive to integrate my diverse knowledge from different areas to create innovative solutions that harness the capabilities of embedded systems and microcontrollers.",
   email: 'mohamedaziz.lahdheri@ensi-uma.tn',
   phone: '(+216) 52 775 176',
   address: 'Ksar Hellal, Monastir, Tunisia',
-  github: 'https://github.com/medaziz218',
+  github: 'https://github.com/MedAziz218',
   facebook: 'https://www.facebook.com/mohamedazizl/',
   linkedIn: 'https://www.linkedin.com/in/mohamed-aziz-lahdheri-09489a263/',
-  twitter: 'https://twitter.com/said7388',
-  stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
-  leetcode: "https://leetcode.com/said3812/",
+  twitter: '#',
+  stackOverflow: '#',
+  leetcode: "#",
   devUsername: "MedAziz218",
-  resume: "https://www.google.com"
+  resume: "https://drive.google.com/file/d/1nhyLmzx1N15Br8JKEevOYMr9_cgFzmLh/view?usp=sharing"
   
 
 }
