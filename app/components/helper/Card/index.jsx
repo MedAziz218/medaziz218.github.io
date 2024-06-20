@@ -1,57 +1,88 @@
-import React from 'react';
-import styles from './responsiveCardStyles.module.scss'; // Importing with a different name
-import GlowCard from '../glow-card';
-const Card = () => {
-  return (
-    
-	<div class="container py-4">
-		<article class={`${styles.postcard} ${styles.dark} ${styles.blue} ${styles.linkWrapper}`}>
-			<a class={styles.postcard__img_link} href="#">
-				<img class={styles.postcard__img} src="https://picsum.photos/1000/1000" alt="Image Title" />
-			</a>
-			<div class={styles.postcard__text}>
-				<h1 class={`${styles.postcard__title} ${styles.blue}`}><a href="#">Podcast Title</a></h1>
-				<div class={`${styles.postcard__subtitle} ${styles.small}`}>
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-					</time>
-				</div>
-				<div class={styles.postcard__bar}></div>
-				<div class={styles.postcard__preview_txt}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-				<ul class={styles.postcard__tagbox}>
-					<li class={styles.tag__item}><i class="fas fa-tag mr-2"></i>Podcast</li>
-					<li class={styles.tag__item}><i class="fas fa-clock mr-2"></i>55 mins.</li>
-					<li class={`${styles.tag__item} ${styles.blue} ${styles.play}`}>
-						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-					</li>
-				</ul>
-			</div>
-		</article>
-		<article class={`${styles.postcard} ${styles.dark} ${styles.blue} ${styles.linkWrapper}`}>
-			<a class={styles.postcard__img_link} href="#">
-				<img class={styles.postcard__img} src="https://picsum.photos/1000/1000" alt="Image Title" />
-			</a>
-			<div class={styles.postcard__text}>
-				<h1 class={`${styles.postcard__title} ${styles.blue}`}><a href="#">Podcast Title</a></h1>
-				<div class={`${styles.postcard__subtitle} ${styles.small}`}>
-					<time datetime="2020-05-25 12:00:00">
-						<i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-					</time>
-				</div>
-				<div class={styles.postcard__bar}></div>
-				<div class={styles.postcard__preview_txt}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-				<ul class={styles.postcard__tagbox}>
-					<li class={styles.tag__item}><i class="fas fa-tag mr-2"></i>Podcast</li>
-					<li class={styles.tag__item}><i class="fas fa-clock mr-2"></i>55 mins.</li>
-					<li class={`${styles.tag__item} ${styles.blue} ${styles.play}`}>
-						<a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-					</li>
-				</ul>
-			</div>
-		</article>
-	</div>
+import React from "react";
+import PropTypes from "prop-types"; // For PropTypes (Optional)
+import classNames from "classnames"; // For dynamic class management
+import styles from "./responsiveCardStyles.module.scss"; // Importing with a different name
+import GlowCard from "../glow-card";
+const Card = ({ imgsrc, title, subtitle, description, tags, identifier, colortype }) => {
 
-  );
+	return (
+		
+			<article
+				className={classNames(
+					styles.postcard,
+					styles.dark,
+					styles.linkWrapper,
+					{
+						[styles.red]: colortype === 'red',
+						[styles.blue]: colortype === 'blue',
+						[styles.green]: colortype === 'green',
+						[styles.yellow]: colortype === 'yellow',
+					}
+				)}
+			>
+				<a className={styles.postcard__img_link} href="#">
+					<img className={styles.postcard__img} src={imgsrc} alt={title} />
+				</a>
+				<div className={styles.postcard__text}>
+					<h1 className={classNames(styles.postcard__title, styles.blue)}>
+						<a href="#">{title}</a>
+					</h1>
+					<div className={classNames(styles.postcard__subtitle, styles.small)}>
+						<time dateTime="2020-05-25 12:00:00">
+							<i className="fas fa-calendar-alt mr-2"></i>
+							{subtitle}
+						</time>
+					</div>
+					<div className={styles.postcard__bar}></div>
+					<div className={styles.postcard__preview_txt}>{description}</div>
+					{tags && tags.length > 0 && (
+						<ul className={styles.postcard__tagbox}>
+							{tags.map((tag, index) => (
+								<li key={index} className={styles.tag__item}>
+									<i className="fas fa-tag mr-2"></i>
+									{tag}
+								</li>
+							))}
+							//TODO: clean this up
+							{/* <li
+								className={classNames(
+									styles.tag__item,
+									styles.blue,
+									styles.play
+								)}
+							>
+								<a href="#">
+									<i className="fas fa-play mr-2"></i>Play Episode
+								</a>
+							</li> */}
+						</ul>
+					)}
+				</div>
+			</article>
+
+	);
 };
 
-export default Card;
+// Define PropTypes for validation (Optional but helpful for runtime checks)
+Card.propTypes = {
+	imgsrc: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	subtitle: PropTypes.string,
+	description: PropTypes.string,
+	tags: PropTypes.arrayOf(PropTypes.string),
+	colortype: PropTypes.oneOf(['red', 'blue', 'green', 'yellow']).isRequired,
+};
+
+// Default props if necessary (Optional)
+Card.defaultProps = {
+	subtitle: "",
+	description: "",
+	tags: [],
+	colortype: "blue",
+};
+
+
+const CardContainer = ({ children }) => {
+	return (<div className={styles.cardcontainer}>{children}</div>)
+}
+export { Card, CardContainer };

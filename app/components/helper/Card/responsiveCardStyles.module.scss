@@ -20,14 +20,18 @@
   text-align: center;
   font-size: 2.5rem;
 }
-
+.cardcontainer{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 /* Cards */
 .postcard {
   flex-wrap: wrap;
   display: flex;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
-  margin: 0 0 2rem 0;
+  margin: 0 0 0 0;
   overflow: hidden;
   position: relative;
   color: #ffffff;

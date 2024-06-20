@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import BlogCard from "./blog-card";
-import Card from "../../helper/Card";
+import { Card, CardContainer } from "../../helper/Card";
 function Blog({ blogs }) {
   return (
     <div
@@ -27,17 +27,21 @@ function Blog({ blogs }) {
         </div>
       </div>
       {
-        blogs.length >0 ?
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
-          {blogs
-            .slice(0, 6)
-            .map(
-              (blog, i) => blog?.cover_image && <BlogCard blog={blog} key={i} />
-            )}
-        </div>
-        :
-        <Card/>
+        blogs.length > 0 ?
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-8 xl:gap-10">
+            {blogs
+              .slice(0, 6)
+              .map(
+                (blog, i) => blog?.cover_image && <BlogCard blog={blog} key={i} />
+              )}
+          </div>
+          :
+          <CardContainer>
+            <Card identifier={"blogs-cards-1"} colortype="red" imgsrc="/image/coming soon.jpg" title="Blogs Coming Soon" description="I'm currently working on creating blogs to document my learnings and share knowledge and experience about embedded software, hardware, and more. Stay tuned for insightful articles and updates!" tags={["Coming Soon", "work in progress", "under construction"]} />
+          </CardContainer>
       }
+
+
 
       <div className="flex justify-center  mt-5 lg:mt-12">
         <Link
