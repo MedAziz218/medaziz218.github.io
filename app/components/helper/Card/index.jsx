@@ -43,7 +43,7 @@ const Card = ({ imgsrc, title, subtitle, description, tags, identifier, colortyp
 									{tag}
 								</li>
 							))}
-							//TODO: clean this up
+							{/* TODO: clean this up */}
 							{/* <li
 								className={classNames(
 									styles.tag__item,
