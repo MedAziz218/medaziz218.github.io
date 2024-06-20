@@ -1,4 +1,5 @@
 export const personalData = {
+  hero_section_skills: ["C/C++","Python","Java","Arduino", "ESP32", "Raspberry Pi", "STM32" , "React"],
   logotext: "MED AZIZ",
   name: "Med Aziz Lahdheri",
   profile: '/profile.png',
@@ -15,4 +16,6 @@ export const personalData = {
   leetcode: "https://leetcode.com/said3812/",
   devUsername: "MedAziz218",
   resume: "https://www.google.com"
+  
+
 }
