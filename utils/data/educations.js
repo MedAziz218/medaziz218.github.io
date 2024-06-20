@@ -1,20 +1,20 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor Degree",
-    duration: "2020 - Present",
-    institution: "National University of Bangladesh",
+    title: "Computer Science Engineering Degree",
+    duration: "2022 - Present",
+    institution: "National School of Computer Science",
   },
   {
     id: 2,
-    title: "Higher Secondary Certificate",
-    duration: "2018 - 2020",
-    institution: "Noakhali Islamia Kamil Madrasah",
+    title: "Preparatory Program for Engineering School",
+    duration: "2021 - 2022",
+    institution: "Preparaptory Institute of Engineering Studies of Monastir",
   },
   {
     id: 3,
-    title: "Secondary School Certificate",
-    duration: "2008 - 2018",
-    institution: "Baitus Saif Islamia Madrasah",
+    title: "Preparatory Program for Engineering School",
+    duration: "2019 - 2021",
+    institution: "College Science and Technology Hammam Sousse",
   }
 ]
