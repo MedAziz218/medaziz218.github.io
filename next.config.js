@@ -5,7 +5,7 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['res.cloudinary.com', 'media.dev.to']
+    remotePatterns: [{hostname:'res.cloudinary.com'}, {hostname: 'media.dev.to'}]
   },
   webpack(config) {
     config.resolve.alias['@'] = path.resolve(__dirname);
