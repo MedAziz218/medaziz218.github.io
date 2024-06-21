@@ -101,13 +101,15 @@ function HeroSection() {
           <div class="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-4">
             <code class="font-mono text-xs md:text-sm lg:text-base">
               <div>
-                <span class="text-pink-500 ">#include </span>
+                <span class="text-gray-400">#</span>
+                <span class="text-pink-500 ">include </span>
                 <span class="text-gray-400">&lt;</span>
                 <span class="text-amber-300">string</span>
                 <span class="text-gray-400">&gt;</span>
               </div>
               <div>
-                <span class="text-pink-500 ">#include </span>
+              <span class="text-gray-400">#</span>
+              <span class="text-pink-500 ">include </span>
                 <span class="text-gray-400">&lt;</span>
                 <span class="text-amber-300">vector</span>
                 <span class="text-gray-400">&gt;</span>
