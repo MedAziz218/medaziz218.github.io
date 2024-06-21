@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 
 const AnimationLottie = ({ animationPath, width }) => {
   const defaultOptions = {
-    loop: false,
+    loop: true,
     autoplay: true,
     animationData: animationPath,
     style: {
