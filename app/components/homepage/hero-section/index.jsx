@@ -86,136 +86,136 @@ function HeroSection() {
 
         </div>
 
-        <div class="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
-          <div class="flex flex-row">
-            <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-            <div class="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
+        <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+          <div className="flex flex-row">
+            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
+            <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
           </div>
-          <div class="px-4 lg:px-8 py-2">
-            <div class="flex flex-row items-center justify-between">
-              <div class="flex flex-row space-x-2">
-                <div class="h-3 w-3 rounded-full bg-red-400"></div>
-                <div class="h-3 w-3 rounded-full bg-orange-400"></div>
-                <div class="h-3 w-3 rounded-full bg-green-200"></div>
+          <div className="px-4 lg:px-8 py-2">
+            <div className="flex flex-row items-center justify-between">
+              <div className="flex flex-row space-x-2">
+                <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                <div className="h-3 w-3 rounded-full bg-orange-400"></div>
+                <div className="h-3 w-3 rounded-full bg-green-200"></div>
               </div>
-              <p class="text-center text-[#16f2b3] text-base lg:text-xl flex-grow flex justify-center">
+              <p className="text-center text-[#16f2b3] text-base lg:text-xl flex-grow flex justify-center">
               profile.cpp
               </p>
             </div>
           </div>
 
-          <div class="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-4">
-            <code class="font-mono text-xs md:text-sm lg:text-base">
+          <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-4">
+            <code className="font-mono text-xs md:text-sm lg:text-base">
               <div>
-                <span class="text-gray-400">#</span>
-                <span class="text-pink-500 ">include </span>
-                <span class="text-gray-400">&lt;</span>
-                <span class="text-amber-300">string</span>
-                <span class="text-gray-400">&gt;</span>
+                <span className="text-gray-400">#</span>
+                <span className="text-pink-500 ">include </span>
+                <span className="text-gray-400">&lt;</span>
+                <span className="text-amber-300">string</span>
+                <span className="text-gray-400">&gt;</span>
               </div>
               <div>
-                <span class="text-gray-400">#</span>
-                <span class="text-pink-500 ">include </span>
-                <span class="text-gray-400">&lt;</span>
-                <span class="text-amber-300">vector</span>
-                <span class="text-gray-400">&gt;</span>
+                <span className="text-gray-400">#</span>
+                <span className="text-pink-500 ">include </span>
+                <span className="text-gray-400">&lt;</span>
+                <span className="text-amber-300">vector</span>
+                <span className="text-gray-400">&gt;</span>
               </div>
               <div>
-                <span class="text-pink-500">using </span>
-                <span class="text-pink-500">namespace </span>
-                <span class="text-white">std</span>
-                <span class="text-white">;</span>
+                <span className="text-pink-500">using </span>
+                <span className="text-pink-500">namespace </span>
+                <span className="text-white">std</span>
+                <span className="text-white">;</span>
               </div>
               <br />
               <div>
-                <span class="text-pink-500">struct </span>
-                <span class="text-green-400 ">CoderType </span>
-                <span class="text-gray-400">{"{"}</span>
+                <span className="text-pink-500">struct </span>
+                <span className="text-green-400 ">CoderType </span>
+                <span className="text-gray-400">{"{"}</span>
               </div>
-              <div class="ml-4 lg:ml-8">
-                <span class="text-white ">string </span>
-                <span class="text-white ">name </span>
-                <span class="text-pink-500 ">= </span>
-                <span class="text-gray-400">{`"`}</span>
-                <span class="text-amber-300">Med Aziz Lahdheri</span>
-                <span class="text-gray-400">{`";`}</span>
+              <div className="ml-4 lg:ml-8">
+                <span className="text-white ">string </span>
+                <span className="text-white ">name </span>
+                <span className="text-pink-500 ">= </span>
+                <span className="text-gray-400">{`"`}</span>
+                <span className="text-amber-300">Med Aziz Lahdheri</span>
+                <span className="text-gray-400">{`";`}</span>
               </div>
-              <div class="ml-4 lg:ml-8">
-                <span class="text-white">vector</span>
-                <span class="text-gray-400">&lt;</span>
-                <span class="text-white">string</span>
-                <span class="text-gray-400">&gt; </span>
-                <span class="text-white">skills </span>
-                <span class="text-pink-500">= </span>
-                <span class="text-gray-400">{`{`}</span>
+              <div className="ml-4 lg:ml-8">
+                <span className="text-white">vector</span>
+                <span className="text-gray-400">&lt;</span>
+                <span className="text-white">string</span>
+                <span className="text-gray-400">&gt; </span>
+                <span className="text-white">skills </span>
+                <span className="text-pink-500">= </span>
+                <span className="text-gray-400">{`{`}</span>
               </div>
-              <div class="ml-8 lg:ml-16">
-                <span class="text-gray-400">{`"`}</span>
-                <span class="text-amber-300">C/C++</span>
-                <span class="text-gray-400">{`", "`}</span>
-                <span class="text-amber-300">Python</span>
-                <span class="text-gray-400">{`", "`}</span>
-                <span class="text-amber-300">Java</span>
-                <span class="text-gray-400">{`", "`}</span>
-                <span class="text-amber-300">Arduino</span>
-                <span class="text-gray-400">{`", "`}</span>
-                <span class="text-amber-300">ESP32</span>
-                <span class="text-gray-400">{`", "`}</span>
-                <span class="text-amber-300">Raspberry Pi</span>
-                <span class="text-gray-400">{`", "`}</span>
-                <span class="text-amber-300">STM32</span>
-                <span class="text-gray-400">{`", "`}</span>
-                <span class="text-amber-300">React</span>
-                <span class="text-gray-400">{`"};`}</span>
+              <div className="ml-8 lg:ml-16">
+                <span className="text-gray-400">{`"`}</span>
+                <span className="text-amber-300">C/C++</span>
+                <span className="text-gray-400">{`", "`}</span>
+                <span className="text-amber-300">Python</span>
+                <span className="text-gray-400">{`", "`}</span>
+                <span className="text-amber-300">Java</span>
+                <span className="text-gray-400">{`", "`}</span>
+                <span className="text-amber-300">Arduino</span>
+                <span className="text-gray-400">{`", "`}</span>
+                <span className="text-amber-300">ESP32</span>
+                <span className="text-gray-400">{`", "`}</span>
+                <span className="text-amber-300">Raspberry Pi</span>
+                <span className="text-gray-400">{`", "`}</span>
+                <span className="text-amber-300">STM32</span>
+                <span className="text-gray-400">{`", "`}</span>
+                <span className="text-amber-300">React</span>
+                <span className="text-gray-400">{`"};`}</span>
               </div>
-              <div class="ml-4 lg:ml-8">
-                <span class="text-pink-500 ">bool </span>
-                <span class="text-white ">hardWorker </span>
-                <span class="text-pink-500">= </span>
-                <span class="text-green-400">true</span>
-                <span class="text-gray-400">;</span>
+              <div className="ml-4 lg:ml-8">
+                <span className="text-pink-500 ">bool </span>
+                <span className="text-white ">hardWorker </span>
+                <span className="text-pink-500">= </span>
+                <span className="text-green-400">true</span>
+                <span className="text-gray-400">;</span>
               </div>
-              <div class="ml-4 lg:ml-8">
-                <span class="text-pink-500">bool </span>
-                <span class="text-white">quickLearner </span>
-                <span class="text-pink-500">= </span>
-                <span class="text-green-400">true</span>
-                <span class="text-gray-400">;</span>
+              <div className="ml-4 lg:ml-8">
+                <span className="text-pink-500">bool </span>
+                <span className="text-white">quickLearner </span>
+                <span className="text-pink-500">= </span>
+                <span className="text-green-400">true</span>
+                <span className="text-gray-400">;</span>
               </div>
-              <div class="ml-4 lg:ml-8">
-                <span class="text-pink-500">bool </span>
-                <span class="text-white">problemSolver </span>
-                <span class="text-pink-500">= </span>
-                <span class="text-green-400">true</span>
-                <span class="text-gray-400">;</span>
+              <div className="ml-4 lg:ml-8">
+                <span className="text-pink-500">bool </span>
+                <span className="text-white">problemSolver </span>
+                <span className="text-pink-500">= </span>
+                <span className="text-green-400">true</span>
+                <span className="text-gray-400">;</span>
               </div>
               <br />
-              <div class="ml-4 lg:ml-8">
-                <span class="text-pink-500">bool </span>
-                <span class="text-green-400">hireable </span>
-                <span class="text-gray-400">()</span>
-                <span class="text-pink-500"> const</span>
-                <span class="text-gray-400">{` {`}</span>
+              <div className="ml-4 lg:ml-8">
+                <span className="text-pink-500">bool </span>
+                <span className="text-green-400">hireable </span>
+                <span className="text-gray-400">()</span>
+                <span className="text-pink-500"> const</span>
+                <span className="text-gray-400">{` {`}</span>
               </div>
-              <div class="ml-8 lg:ml-16">
-                <span class="text-pink-500">return </span>
-                <span class="text-white">hardWorker </span>
-                <span class="text-amber-300">&amp;&amp;</span>
-                <span class="text-white"> problemSolver </span>
-                <span class="text-amber-300">&amp;&amp;</span>
-                <span class="text-cyan-400"> skills</span>
-                <span class="text-gray-400">.</span>
-                <span class="text-white">size</span>
-                <span class="text-gray-400">() </span>
-                <span class="text-amber-300">&gt;=</span>
-                <span class="text-orange-400"> 5</span>
-                <span class="text-gray-400">;</span>
+              <div className="ml-8 lg:ml-16">
+                <span className="text-pink-500">return </span>
+                <span className="text-white">hardWorker </span>
+                <span className="text-amber-300">&amp;&amp;</span>
+                <span className="text-white"> problemSolver </span>
+                <span className="text-amber-300">&amp;&amp;</span>
+                <span className="text-cyan-400"> skills</span>
+                <span className="text-gray-400">.</span>
+                <span className="text-white">size</span>
+                <span className="text-gray-400">() </span>
+                <span className="text-amber-300">&gt;=</span>
+                <span className="text-orange-400"> 5</span>
+                <span className="text-gray-400">;</span>
               </div>
-              <div class="ml-4 lg:ml-8">
-                <span class="text-gray-400">{`}`}</span>
+              <div className="ml-4 lg:ml-8">
+                <span className="text-gray-400">{`}`}</span>
               </div>
               <div>
-                <span class="text-gray-400">{`};`}</span>
+                <span className="text-gray-400">{`};`}</span>
               </div>
 
             </code>
