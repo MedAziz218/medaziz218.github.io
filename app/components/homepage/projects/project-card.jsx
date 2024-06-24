@@ -34,8 +34,40 @@ function ProjectCard({ project }) {
             <span className="text-amber-300">{project.name}</span>
             <span className="text-gray-400">{`',`}</span>
           </div>
-
-          <div className="ml-4 lg:ml-8 mr-2">
+          
+          {project.software && <div className="ml-4 lg:ml-8 mr-2">
+            <span className=" text-white">software:</span>
+            <span className="text-gray-400">{` ['`}</span>
+            {
+              project.software.map((tag, i) => (
+                <React.Fragment key={i}>
+                  <span className="text-amber-300">{tag}</span>
+                  {
+                    project.software.length - 1 !== i &&
+                    <span className="text-gray-400">{`', '`}</span>
+                  }
+                </React.Fragment>
+              ))
+            }
+            <span className="text-gray-400">{"],"}</span>
+          </div>}
+          {project.hardware && <div className="ml-4 lg:ml-8 mr-2">
+            <span className=" text-white">hardware:</span>
+            <span className="text-gray-400">{` ['`}</span>
+            {
+              project.hardware.map((tag, i) => (
+                <React.Fragment key={i}>
+                  <span className="text-amber-300">{tag}</span>
+                  {
+                    project.hardware.length - 1 !== i &&
+                    <span className="text-gray-400">{`', '`}</span>
+                  }
+                </React.Fragment>
+              ))
+            }
+            <span className="text-gray-400">{"],"}</span>
+          </div>}
+          {project.tools && <div className="ml-4 lg:ml-8 mr-2">
             <span className=" text-white">tools:</span>
             <span className="text-gray-400">{` ['`}</span>
             {
@@ -50,7 +82,8 @@ function ProjectCard({ project }) {
               ))
             }
             <span className="text-gray-400">{"],"}</span>
-          </div>
+          </div>}
+
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
             <span className="text-orange-400">{project.role}</span>
