@@ -27,6 +27,8 @@ export default async function Home() {
 
   return (
     <>
+      
+
       <HeroSection />
       <AboutSection />
       <Education />
@@ -35,6 +37,7 @@ export default async function Home() {
       <Experience />
       <Blog blogs={blogs} />
       <ContactSection />
+      
     </>
   )
 };
