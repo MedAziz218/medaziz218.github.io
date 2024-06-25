@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import blobStyles from './glowingblob.module.scss';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function GlowingBlob() {
     const cursorSize = 0;
@@ -11,7 +11,16 @@ export default function GlowingBlob() {
         x: useMotionValue(0),
         y: useMotionValue(0)
     };
-
+    const touchRef = useRef({ clientX: 0, clientY: 0 });
+    // Function to handle touch movement
+    const handleTouchMove = e => {
+        const touch = e.touches[0];
+        if (touch) {
+            touchRef.current.clientX = touch.clientX;
+            touchRef.current.clientY = touch.clientY;
+            handleMouseMove(touch);
+        }
+    };
     // Function to handle mouse movement
     const handleMouseMove = e => {
         const { clientX, clientY } = e;
@@ -34,7 +43,7 @@ export default function GlowingBlob() {
         mouse.y.set(clientY - cursorSize / 2 + scrollY);
     };
 
-    const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 ,duration: 0.3};
+    const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 ,duration: 3};
     const smoothMouse = {
         x: useSpring(mouse.x, smoothOptions),
         y: useSpring(mouse.y, smoothOptions)
@@ -51,11 +60,13 @@ export default function GlowingBlob() {
             handleMouseMove(e);
         };
 
-        window.addEventListener("mousemove", manageMouseMove);
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("touchmove", handleTouchMove);
         window.addEventListener("scroll", handleScroll);
 
         return () => {
-            window.removeEventListener("mousemove", manageMouseMove);
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("touchmove", handleTouchMove);
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
