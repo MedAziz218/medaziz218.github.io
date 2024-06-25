@@ -1,11 +1,9 @@
 "use client";
-import Head from 'next/head';
 import blobStyles from './glowingblob.module.scss';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 export default function GlowingBlob() {
-    const cursorSize = 0;
     let clientPos = {x:0,y:0};
     const mouse = {
         x: useMotionValue(0),
@@ -28,8 +26,8 @@ export default function GlowingBlob() {
         const scrollX = window.scrollX;
         const scrollY = window.scrollY;
 
-        mouse.x.set(clientX - cursorSize / 2 + scrollX);
-        mouse.y.set(clientY - cursorSize / 2 + scrollY);
+        mouse.x.set(clientX + scrollX);
+        mouse.y.set(clientY + scrollY);
     };
 
     // Function to handle scroll
@@ -39,11 +37,11 @@ export default function GlowingBlob() {
         const scrollX = window.scrollX;
         const scrollY = window.scrollY;
 
-        mouse.x.set(clientX - cursorSize / 2 + scrollX);
-        mouse.y.set(clientY - cursorSize / 2 + scrollY);
+        mouse.x.set(clientX + scrollX);
+        mouse.y.set(clientY + scrollY);
     };
 
-    const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 ,duration: 3};
+    const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 ,duration: 10};
     const smoothMouse = {
         x: useSpring(mouse.x, smoothOptions),
         y: useSpring(mouse.y, smoothOptions)
