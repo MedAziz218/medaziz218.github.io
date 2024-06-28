@@ -7,6 +7,7 @@ import Navbar from './components/navbar';
 import './css/card.scss';
 import './css/globals.scss';
 import GlowingBlob from './components/helper/GlowingBlob';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {

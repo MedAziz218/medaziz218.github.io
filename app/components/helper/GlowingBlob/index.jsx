@@ -1,10 +1,23 @@
 "use client";
 import blobStyles from './glowingblob.module.scss';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
+export const useDeviceDetect = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const userAgent = typeof navigator === 'undefined' ? '' : navigator.userAgent;
+        const isMobileDevice = /Mobi|Android/i.test(userAgent);
+        setIsMobile(isMobileDevice);
+    }, []);
+
+    return { isMobile };
+};
 export default function GlowingBlob() {
-    let clientPos = {x:0,y:0};
+
+    const { isMobile } = useDeviceDetect();
+    let clientPos = { x: 0, y: 0 };
     const mouse = {
         x: useMotionValue(0),
         y: useMotionValue(0)
@@ -22,7 +35,7 @@ export default function GlowingBlob() {
     // Function to handle mouse movement
     const handleMouseMove = e => {
         const { clientX, clientY } = e;
-        clientPos = {clientX,clientY};
+        clientPos = { clientX, clientY };
         const scrollX = window.scrollX;
         const scrollY = window.scrollY;
 
@@ -41,7 +54,7 @@ export default function GlowingBlob() {
         mouse.y.set(clientY + scrollY);
     };
 
-    const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 ,duration: 10};
+    const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5, duration: 10 };
     const smoothMouse = {
         x: useSpring(mouse.x, smoothOptions),
         y: useSpring(mouse.y, smoothOptions)
@@ -71,11 +84,13 @@ export default function GlowingBlob() {
 
     return (
         <div>
+            { !isMobile && 
             <motion.div
                 className={blobStyles.blob}
                 style={{ left: smoothMouse.x, top: smoothMouse.y }}
                 
             />
+            }
             <div className={blobStyles.blur}></div>
         </div>
     );
